@@ -1,0 +1,10 @@
+bitvec Package, comprising:
+  bitvec.php
+  LICENCE
+  phpunit.xml.dist
+  phpdoc.dist.xml
+  README
+  tests/bvt1.php
+  tests/prime.php
+
+This package is hereby dedicated to the public domain by the author.

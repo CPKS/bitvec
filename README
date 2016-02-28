@@ -1,0 +1,76 @@
+PHP bit vector (array of 0/1 values)
+designed and written by CPKS
+
+1. Introduction:
+
+The bitvec class is a specialized array implementation for storing 0/1 values
+only. Because of this limitation, it is possible to store multiple values in a
+single integer. Use of SplFixedArray provides a memory-efficient vehicle to
+deliver a relatively high capacity bit array.
+
+A separate iterator class, bitvecIterator, has been provided to provide full
+array iterator access to bitvec. For many applications this may be unnecessary
+and the bitvec class alone will suffice.
+
+Bit vectors are useful for certain numeric algorithms, and in particular for the
+generation of primes using sieve techniques, where it can be advantageous to hold
+a very large bit vector in memory.
+
+2. Acknowledgments:
+
+One application for bit vectors is the generation of primes. I signal my indebtedness
+to tzulac@gmail.com for the prime.php file on this site, which provided a launchpad
+for my rewritten version, used as a demo and test file in this package.
+
+3. Licensing:
+
+On licensing, please see the LICENCE file issued with this package.
+
+4. Files in this package:
+
+4.1 bitvec.php: bitvec and bitvecIterator classes
+
+4.2 LICENCE: licensing details
+
+4.3 phpunit.xml.dist: test configuration
+
+4.4 phpdoc.dist.xml:
+Assists the phpdoc documentation-generating package in producing documentation
+for this package.
+
+4.5 README: this file
+
+4.6 tests/bvt1.php: Unit tests for bitvec class
+
+4.7 tests/prime.php: Prime generation using bitvec according to several different
+algorithms, provided as illustration of class use and as part of unit testing.
+
+5. Documentation
+
+I have elected to tailor this package to the PEAR phpdoc documentation system.
+This produces good interactive HTML browsing capabilities together with an
+SVG class diagram showing package and namespace relationships as well as
+the object inheritance/implementation tree. See http://phpdoc.org/
+for installation instructions. To generate the documentation, create a
+directory called "doc" in the project base directory, and then run the
+phpdoc command in that base directory.
+
+6. Historical and design-related remarks on this package
+
+The bitvec class is loosely based on my C++ class of the same name from 1991.
+
+Although the PHP bitvec uses SplFixedArray, note that it does not extend the
+SPL class. This is because some of the SplFixedArray functions really do not
+correspond at all to bitvec functionality: there is no "is-a" relationship
+here: a bitvec is not an SplFixedArray and certain operations mean something
+different. In particular, no use is made of the SplFixedArray iterator
+implementation, which has in any case been removed to bitvecIterator.
+
+No use has been made of namespaces. Users of PHP >= 5.3 are recommended to
+bring bitvec inside a namespace, e.g. storage. The code is ready for this to
+be done.
+
+Array bound violations are always caught by the SplFixedArray. Note that this
+throws RuntimeException and not OutOfBoundsException.
+
+CPKS

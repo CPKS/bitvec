@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <title>bitvec: compact array of 0/1 values</title>
+  <parser>
+    <target>doc/parser</target>
+  </parser>
+  <transformer>
+    <target>doc</target>
+  </transformer>
+  <files>
+    <file>bitvec.php</file>
+  </files>
+  <transformations>
+    <template name="new-black"/>
+  </transformations>
+</phpdoc>

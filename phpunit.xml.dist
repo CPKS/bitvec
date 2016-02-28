@@ -1,0 +1,7 @@
+<phpunit>
+ <testsuites>
+  <testsuite name="bitvec">
+    <file>tests/bvt1.php</file>
+  </testsuite>
+ </testsuites>
+</phpunit>
